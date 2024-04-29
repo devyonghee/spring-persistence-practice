@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+entity author {
+  * id
+}
+
+entity author_book {
+  * author_id
+  * book_id
+}
+
+entity book {
+  * id
+}
+
+author ||--|{ author_book
+author_book }|--|| book
+
+@enduml

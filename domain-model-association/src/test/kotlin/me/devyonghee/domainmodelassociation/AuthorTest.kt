@@ -3,6 +3,9 @@ package me.devyonghee.domainmodelassociation
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.optional.shouldBePresent
 import io.kotest.matchers.shouldBe
+import me.devyonghee.domainmodelassociation.bidirectional.Author
+import me.devyonghee.domainmodelassociation.bidirectional.AuthorRepository
+import me.devyonghee.domainmodelassociation.bidirectional.Book
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest

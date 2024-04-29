@@ -1,4 +1,4 @@
-package me.devyonghee.domainmodelassociation
+package me.devyonghee.domainmodelassociation.bidirectional
 
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType

@@ -1,4 +1,4 @@
-package me.devyonghee.domainmodelassociation
+package me.devyonghee.domainmodelassociation.bidirectional
 
 
 import org.springframework.boot.autoconfigure.SpringBootApplication

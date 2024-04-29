@@ -1,4 +1,4 @@
-package me.devyonghee.domainmodelassociation
+package me.devyonghee.domainmodelassociation.bidirectional
 
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Entity
@@ -17,7 +17,7 @@ class Author(
     // orphanRemoval: 참조되지 않는 자식들의 삭제 보장
     // 기본적으로 부모 측 엔티티를 가져와도 자식 측의 엔티티를 가져오지 않는 lazy 로딩 전략을 사용, 쿼리 기반에서만 즉시 가져오는 것이 좋음
     @OneToMany(cascade = [CascadeType.ALL], mappedBy = "author", orphanRemoval = true)
-    var books: List<Book> = emptyList(),
+    var books: List<Book> = mutableListOf(),
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
