@@ -80,4 +80,8 @@
 - `EntityManager` 를 통한 엔터티 그래프 정의
   - `getEntityGraph(String name)` 를 통해 엔터티 그래프 사용
 
-  
+
+### JPA 엔터티 서브그래프를 통해 연관관계를 가져오는 방법
+
+- `@NamedEntityGraph` 와 `@NamedSubgraph` 를 사용하여 엔터티 서브그래프 정의
+- 애드폭 엔터티 그래프에서 점 노테이션(`.`)을 사용하여 서브그래프 사용

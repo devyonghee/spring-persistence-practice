@@ -17,6 +17,16 @@ class AuthorNamedEntityGraphService(
     }
 
     @Transactional
+    fun `entityManager 로 subGraph 사용`(): AuthorNamedEntityGraph {
+        val entityGraph = entityManager.createEntityGraph(AuthorNamedEntityGraph::class.java)
+        val bookGraph = entityGraph.addSubgraph<BookNamedEntityGraph>("books")
+        bookGraph.addAttributeNodes("publisher")
+
+        val properties = mapOf("javax.persistence.fetchgraph" to entityGraph)
+        return entityManager.find(AuthorNamedEntityGraph::class.java, 1L, properties)
+    }
+
+    @Transactional
     fun `jpql 에도 entityGraph 사용`(): AuthorNamedEntityGraph {
         val entityGraph = entityManager.getEntityGraph("author-books-graph")
 

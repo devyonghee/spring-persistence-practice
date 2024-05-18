@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query
 interface AuthorNamedEntityGraphRepository : JpaRepository<AuthorNamedEntityGraph, Long>,
     JpaSpecificationExecutor<AuthorNamedEntityGraph> {
 
-    @EntityGraph(value = "author-books-graph", type = EntityGraph.EntityGraphType.FETCH)
+    @EntityGraph(value = "author-books-publisher-graph", type = EntityGraph.EntityGraphType.FETCH)
     override fun findAll(): List<AuthorNamedEntityGraph>
 
     @EntityGraph(value = "author-books-graph", type = EntityGraph.EntityGraphType.FETCH)

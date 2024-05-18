@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query
 interface AuthorAdhocRepository : JpaRepository<Author, Long>,
     JpaSpecificationExecutor<Author> {
 
-    @EntityGraph(attributePaths = ["book"], type = EntityGraph.EntityGraphType.FETCH)
+    @EntityGraph(attributePaths = ["book.publisher"], type = EntityGraph.EntityGraphType.FETCH)
     override fun findAll(): List<Author>
 
     @EntityGraph(attributePaths = ["book"], type = EntityGraph.EntityGraphType.FETCH)

@@ -17,6 +17,11 @@ class BookNamedEntityGraph(
     // 혼동되지 않도록 JoinColumn 을 통해 의도된 컬럼명을 지정하는 것이 좋음
     @JoinColumn(name = "author_id")
     var author: Author? = null,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "publisher_id")
+    var publisher: PublisherNamedSubGraph,
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
