@@ -73,5 +73,11 @@
   - 로드 그래프(load graph)
     - `java.persistence.loadgraph` 속성으로 지정되는 가져오기 유형
     - `attributeNodes` 에 지정되는 속성들은 `EAGER` 로 처리, 나머지 속성은 지정된 `FetchType` 또는 기본 값
-- `@NamedEntityGraph` 로 엔터티 그래프를 정의
+- 엔터티에 `@NamedEntityGraph` 로 엔터티 그래프를 정의
+- 애드혹 엔터티 그래프 정의
+  - `@EntityGraph(attributePath= {"attr1", ...})` 를 사용하여 목록 지정
+  - `@NamedEntityGraph` 사용이 필요 없음
+- `EntityManager` 를 통한 엔터티 그래프 정의
+  - `getEntityGraph(String name)` 를 통해 엔터티 그래프 사용
 
+  

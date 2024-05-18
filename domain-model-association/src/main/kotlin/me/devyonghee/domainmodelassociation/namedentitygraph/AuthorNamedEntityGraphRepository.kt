@@ -19,6 +19,6 @@ interface AuthorNamedEntityGraphRepository : JpaRepository<AuthorNamedEntityGrap
     override fun findAll(spec: Specification<AuthorNamedEntityGraph>): List<AuthorNamedEntityGraph>
 
     @EntityGraph(value = "author-books-graph", type = EntityGraph.EntityGraphType.FETCH)
-    @Query("SELECT a FROM AuthorNamedEntityGraph a WHERE a.age BETWEEN 20 AND 40")
+    @Query("SELECT a FROM AuthorAdhocEntityGraph a WHERE a.age BETWEEN 20 AND 40")
     fun fetchAllAgeBetween20And40();
 }
