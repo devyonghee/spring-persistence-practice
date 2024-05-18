@@ -46,8 +46,21 @@ class AuthorManyToMany(
         books = emptySet()
     }
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as AuthorManyToMany
+
+        return id != 0L && id == other.id
+    }
+
     // toString 은 기본 속성만 포함되는 것이 좋음, 지연 속성이나 연관관계를 포함하면 SQL 을 실행하거나 LazyInitializationException 발생 가능
     override fun toString(): String {
         return "Author(id=$id)"
+    }
+
+    override fun hashCode(): Int {
+        return id.hashCode()
     }
 }
